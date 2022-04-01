@@ -36,6 +36,9 @@ main {
   background-color: var(--nt-dk-blue);
   padding: 2rem 1.5rem;
   border-radius: 1rem;
+  overflow: hidden;
+  /* transition: all 1000ms ease; */
+  position: relative;
 }
 
 .icon {
@@ -45,6 +48,36 @@ main {
   display: grid;
   place-items: center;
   border-radius: 50%;
+  top: 0;
+  left: 0;
+  transition: all 1000ms ease;
+}
+
+.expand-icon {
+  position: absolute;
+  background-color: var(--nt-dk-blue);
+  transform: scale(1000%);
+  top: 45%;
+  left: 45%;
+  border-radius: 0;
+  z-index: 1111;
+}
+
+.rotate {
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }
 
 h1 {
@@ -66,26 +99,38 @@ form {
   display: flex;
   justify-content: space-between;
   margin-top: 1.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
-input {
-  display: none;
+.input-radio {
+  position: absolute;
+  top: -10000px;
+  left: -10000px;
+  opacity: 0;
 }
 
-label {
+.input-label {
   width: 2.75rem;
   height: 2.75rem;
   display: grid;
   place-items: center;
   background-color: hsla(217, 12%, 63%, 0.1);
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-.rating-number {
   font-size: 0.75rem;
   color: var(--nt-lt-grey);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 200ms ease, color 200ms ease,
+    transform 200ms ease;
+}
+
+.input-label:hover {
+  background-color: hsla(217, 12%, 63%, 1);
+  color: var(--nt-white);
+}
+
+.input-radio:checked ~ .input-label {
+  background-color: var(--pm-orange);
+  color: var(--nt-white);
 }
 
 button {
@@ -98,4 +143,60 @@ button {
   letter-spacing: 2px;
   text-transform: uppercase;
   border-radius: 2rem;
+  cursor: pointer;
+  transition: background-color 200ms ease, color 200ms ease,
+    transform 200ms ease;
+}
+
+button:hover {
+  background-color: var(--nt-white);
+  color: var(--pm-orange);
+  transform: translateY(-2px);
+}
+
+.disabled-btn {
+  background-color: var(--nt-md-grey);
+  color: rgb(203, 203, 203);
+  cursor: unset;
+}
+
+.disabled-btn:hover {
+  background-color: var(--nt-md-grey);
+  color: rgb(203, 203, 203);
+  transform: unset;
+}
+
+.thank-you-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rating-text {
+  font-size: 0.75rem;
+  background-color: hsla(217, 12%, 63%, 0.1);
+  color: var(--pm-orange);
+  padding: 0.35rem 0.75rem;
+  border-radius: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.35px;
+}
+
+.thank-you-message {
+  font-size: var(--p-size);
+  color: var(--nt-lt-grey);
+  line-height: 24px;
+  text-align: center;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  position: absolute;
+  bottom: 10px;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
 }

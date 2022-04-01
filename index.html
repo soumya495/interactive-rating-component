@@ -16,22 +16,13 @@
 
     <title>Frontend Mentor | Interactive rating component</title>
 
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style>
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-    </style>
+    <style></style>
   </head>
   <body>
     <main>
       <header>
         <div class="icon">
-          <img src="./images/icon-star.svg" alt="star" />
+          <img src="./images/icon-star.svg" alt="star" class="star-image" />
         </div>
         <h1>How did we do?</h1>
       </header>
@@ -39,48 +30,70 @@
         Please let us know how we did with your support request. All feedback is
         appreciated to help us improve our offering!
       </p>
-      <form>
+      <form class="rating-form">
         <div class="rating-group">
-          <label for="rating-1">
-            <p class="rating-number">1</p>
-            <input type="radio" name="rating" id="rating-1" />
-          </label>
-          <label for="rating-2">
-            <p class="rating-number">2</p>
-            <input type="radio" name="rating" id="rating-2" />
-          </label>
-          <label for="rating-3">
-            <p class="rating-number">3</p>
-            <input type="radio" name="rating" id="rating-3" />
-          </label>
-          <label for="rating-4">
-            <p class="rating-number">4</p>
-            <input type="radio" name="rating" id="rating-4" />
-          </label>
-          <label for="rating-5">
-            <p class="rating-number">5</p>
-            <input type="radio" name="rating" id="rating-5" />
-          </label>
+          <div class="input-group">
+            <input
+              class="input-radio"
+              type="radio"
+              value="1"
+              name="rating"
+              id="rating-1"
+            />
+            <label class="input-label" for="rating-1">1</label>
+          </div>
+          <div class="input-group">
+            <input
+              class="input-radio"
+              type="radio"
+              value="2"
+              name="rating"
+              id="rating-2"
+            />
+            <label class="input-label" for="rating-2">2</label>
+          </div>
+          <div class="input-group">
+            <input
+              class="input-radio"
+              type="radio"
+              value="3"
+              name="rating"
+              id="rating-3"
+            />
+            <label class="input-label" for="rating-3">3</label>
+          </div>
+          <div class="input-group">
+            <input
+              class="input-radio"
+              type="radio"
+              value="4"
+              name="rating"
+              id="rating-4"
+            />
+            <label class="input-label" for="rating-4">4</label>
+          </div>
+          <div class="input-group">
+            <input
+              class="input-radio"
+              type="radio"
+              value="5"
+              name="rating"
+              id="rating-5"
+            />
+            <label class="input-label" for="rating-5">5</label>
+          </div>
         </div>
-        <button type="submit">Submit</button>
+        <button disabled type="submit" class="disabled-btn">Submit</button>
       </form>
     </main>
-
-    <!-- Thank you state start -->
-
-    <!-- You selected -->
-    <!-- Add rating here -->
-    <!-- out of 5 Thank you! We appreciate you taking the time to give a rating. If
-    you ever need more support, don’t hesitate to get in touch! -->
-
-    <!-- Thank you state end -->
-
-    <!-- <div class="attribution">
+    <div class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
-      >. Coded by <a href="#">Soumya Banerjee</a>.
-    </div> -->
+      >. Coded by
+      <a href="https://github.com/soumya495" target="_blank">Soumya Banerjee</a
+      >.
+    </div>
     <script src="index.js"></script>
   </body>
 </html>
