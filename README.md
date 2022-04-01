@@ -15,7 +15,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./demo.gif)
+<img src="demo.gif" alt="drawing" width="400"/>
 
 ## My process
 
